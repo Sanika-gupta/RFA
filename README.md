@@ -63,7 +63,7 @@ sequenceDiagram
     A->>DB: SELECT rfq FOR UPDATE (lock)
     A->>A: open? start ≤ now < close
     A->>DB: get or create supplier
-    A->>A: ranking BEFORE; rebid must be lower
+    A->>A: ranking BEFORE, rebid must be lower
     A->>DB: INSERT bid
     A->>A: ranking AFTER
     A->>DB: INSERT log BID_PLACED
